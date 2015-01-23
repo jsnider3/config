@@ -1,0 +1,27 @@
+#!/bin/bash
+#A shell script to make cd'ing up multiple directories easier.
+# u is the same as cd ..
+# u X is cd {../}*X
+# Knows to stop if it hits root
+# I usually put alias u=cd /usr/bin/umain in my .bashrc.
+if (($# > 0))
+then
+	if [ "$1" -eq "$1" ] 2>/dev/null
+	then
+	if (($1 >0))
+	then
+	cnt=$1
+	else
+	cnt=1
+	fi
+	else
+	cnt=1
+	fi
+else 
+	cnt=1
+fi
+while [[ $cnt -gt 0 && `pwd` != "/" ]]
+do
+cd ..
+cnt=$[$cnt-1]
+done

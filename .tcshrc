@@ -1,0 +1,27 @@
+#!/bin/tcsh
+# .tcshrc
+#####################################################################
+# umask 
+#####################################################################
+umask 022  #(drwxr-xr-x)
+#####################################################################
+# Color aliases (note ~/.dir_colors)
+#####################################################################
+alias la  'ls -F -a --color=tty'
+alias ll  'ls -F -l --color=tty'
+alias lt  ll -rt
+alias lal 'ls -F -al --color=tty'
+alias l.  'ls -F -d .[a-zA-Z]* --color=tty'
+alias ls  'ls -F --color=tty'
+alias l ls
+#####
+#Mine
+#####
+alias vi vim
+alias psgrep 'ps -e|grep -v grep|grep'
+alias lsgrep 'ls | grep'
+alias q 'exit'
+alias cfiles 'grep -e ".cc" -e ".cpp"'
+alias hfiles 'grep -e .hh -e .hpp'
+alias u /usr/bin/umain
+setenv PATH .:$PATH

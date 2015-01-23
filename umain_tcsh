@@ -1,0 +1,17 @@
+#!/bin/tcsh
+#A shell script to make cd'ing up multiple directories easier.
+# u is the same as cd ..
+# u X is cd {../}*X
+# Knows to stop if it hits root
+# I usually put alias u cd /usr/bin/umain in my .bashrc.
+#Author: Josh Snider
+
+if ($# == 0 ||$1 <= 0) then
+	set cnt=1
+else
+	set cnt=$1
+endif
+while($cnt>0 && `pwd` != "/")
+	cd ..
+	set cnt=(`expr $cnt - 1`)
+end
