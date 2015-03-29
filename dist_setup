@@ -1,0 +1,8 @@
+#!/bin/sh
+# A script to install all the packages I want
+#   on my machines.
+sudo apt-get install ruby1.9.1-dev
+sudo apt-get install jekyll
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
