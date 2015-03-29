@@ -17,7 +17,9 @@ sudo apt-get install -y eclipse emacs
 
 #Pretty backgrounds
 sudo apt-get install -y variety
-sudo apt-get install -y fish
+
+#Alternate shells
+sudo apt-get install -y fish ksh
 
 #Chrome
 sudo apt-get install -y google-chrome-stable
