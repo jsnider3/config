@@ -3,8 +3,9 @@
 #   on my machines.
 
 #Programming
-sudo apt-get install -y build-essential gcc g++ 
-sudo apt-get install -y python3 pylint pypy
+sudo apt-get install -y build-essential gcc g++ gfortran 
+sudo apt-get install -y python3 pylint pypy python-dev \
+                        python-numpy python-scipy cython
 sudo apt-get install -y ghc haskell-platform yesod
 sudo apt-get install -y openjdk-7-jdk openjdk-8-jdk
 sudo apt-get install -y ocaml opam
@@ -12,23 +13,26 @@ sudo apt-get install -y jekyll ruby1.9.1-dev
 
 cabal install primes
 
+sudo apt-get install -y eclipse emacs
+
 #Pretty backgrounds
-sudo apt-get -y install variety
+sudo apt-get install -y variety
+sudo apt-get install -y fish
 
 #Chrome
-sudo apt-get -y install google-chrome-stable
+sudo apt-get install -y google-chrome-stable
 
 #Media
-sudo apt-get -y install vlc
-sudo apt-get -y install gstreamer0.10-plugins-ugly gxine libdvdread4 \
-                totem-mozilla icedax tagtool easytag id3tool lame \
-                nautilus-script-audio-convert libmad0 mpg321 \
-                gstreamer1.0-libav
+sudo apt-get install -y vlc
+sudo apt-get install -y gstreamer0.10-plugins-ugly gxine libdvdread4 \
+                        totem-mozilla icedax tagtool easytag id3tool \
+                        lame nautilus-script-audio-convert libmad0 \
+                        mpg321 gstreamer1.0-libav
 
 #Compressed files
-sudo apt-get -y install unace unrar zip unzip p7zip-full \
-                p7zip-rar sharutils rar uudeview mpack arj \
-                cabextract file-roller
+sudo apt-get install -y unace unrar zip unzip p7zip-full \
+                        p7zip-rar sharutils rar uudeview mpack arj \
+                        cabextract file-roller
 
 #Finalize
 sudo apt-get update
