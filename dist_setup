@@ -2,11 +2,15 @@
 # A script to install all the packages I want
 #   on my machines.
 
+BASICS="autoconf automake git libtool make pkg-config"
+DOTNET="monodevelop mono-complete fsharp"
 GCC="build-essential curl gcc g++ gfortran"
-PYTHON="python3 pylint pypy python-dev python-numpy python-scipy cython"
 HASKELL="ghc haskell-platform yesod"
 JAVA="openjdk-7-jdk openjdk-8-jdk"
 OCAML="ocaml ocaml-doc ocaml-findlib opam ocaml-native-compilers libpcre-ocaml-dev"
+PERL="perl perl-tk"
+PYTHON="python3 pylint pypy python-dev python-numpy python-scipy cython"
+PROLOG="swi-prolog"
 RUBY="jekyll ruby1.9.1-dev"
 TEX="texworks texlive"
 
@@ -14,16 +18,16 @@ EDITORS="eclipse emacs"
 SECURE="libssl-dev m4 zlib1g-dev"
 SHELLS="csh fish ksh mksh rc tcsh sash"
 FILES="unace unrar zip unzip p7zip-full p7zip-rar \
-         sharutils rar uudeview mpack arj cabextract file-roller"
+       sharutils rar uudeview mpack arj cabextract file-roller"
 PRETTY="variety"
 MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4 \
-         totem-mozilla icedax tagtool easytag id3tool lame \
-         nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
+       totem-mozilla icedax tagtool easytag id3tool lame \
+       nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
 CHROME="google-chrome-stable"
 
-sudo apt-get install -y $GCC $PYTHON $HASKELL $JAVA $OCAML $RUBY $TEX \
-                        $MEDIA $EDITORS $SECURE $SHELLS $FILES $PRETTY \
-                        $CHROME
+sudo apt-get install -y $GCC $PYTHON $HASKELL $JAVA $OCAML $PROLOG $RUBY \
+                        $TEX $MEDIA $EDITORS $SECURE $SHELLS $FILES \
+                        $PRETTY $CHROME $CSHARP $BASICS $PERL
 
 cabal install primes
 # opam install batteries core
