@@ -3,20 +3,32 @@
 #   on my machines.
 
 #Programming
-sudo apt-get install build-essential
-sudo apt-get install gcc
-sudo apt-get install g++
-sudo apt-get install python3
-sudo apt-get install pylint
-sudo apt-get install haskell-platform
-sudo apt-get install ocaml
-sudo apt-get install ruby1.9.1-dev
-sudo apt-get install jekyll
+sudo apt-get install -y build-essential gcc g++ 
+sudo apt-get install -y python3 pylint pypy
+sudo apt-get install -y ghc haskell-platform yesod
+sudo apt-get install -y openjdk-7-jdk openjdk-8-jdk
+sudo apt-get install -y ocaml opam
+sudo apt-get install -y jekyll ruby1.9.1-dev
 
 cabal install primes
 
-#Pretty stuff
-sudo apt-get install variety
+#Pretty backgrounds
+sudo apt-get -y install variety
+
+#Chrome
+sudo apt-get -y install google-chrome-stable
+
+#Media
+sudo apt-get -y install vlc
+sudo apt-get -y install gstreamer0.10-plugins-ugly gxine libdvdread4 \
+                totem-mozilla icedax tagtool easytag id3tool lame \
+                nautilus-script-audio-convert libmad0 mpg321 \
+                gstreamer1.0-libav
+
+#Compressed files
+sudo apt-get -y install unace unrar zip unzip p7zip-full \
+                p7zip-rar sharutils rar uudeview mpack arj \
+                cabextract file-roller
 
 #Finalize
 sudo apt-get update
