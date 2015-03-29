@@ -1,8 +1,24 @@
 #!/bin/sh
 # A script to install all the packages I want
 #   on my machines.
+
+#Programming
+sudo apt-get install build-essential
+sudo apt-get install gcc
+sudo apt-get install g++
+sudo apt-get install python3
+sudo apt-get install pylint
+sudo apt-get install haskell-platform
+sudo apt-get install ocaml
 sudo apt-get install ruby1.9.1-dev
 sudo apt-get install jekyll
+
+cabal install primes
+
+#Pretty stuff
+sudo apt-get install variety
+
+#Finalize
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get autoremove
