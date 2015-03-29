@@ -2,40 +2,31 @@
 # A script to install all the packages I want
 #   on my machines.
 
-#Programming
-sudo apt-get install -y build-essential gcc g++ gfortran 
-sudo apt-get install -y python3 pylint pypy python-dev \
-                        python-numpy python-scipy cython
-sudo apt-get install -y ghc haskell-platform yesod
-sudo apt-get install -y openjdk-7-jdk openjdk-8-jdk
-sudo apt-get install -y ocaml opam
-sudo apt-get install -y jekyll ruby1.9.1-dev
-sudo apt-get install -y texworks texlive
+GCC="build-essential curl gcc g++ gfortran"
+PYTHON="python3 pylint pypy python-dev python-numpy python-scipy cython"
+HASKELL="ghc haskell-platform yesod"
+JAVA="openjdk-7-jdk openjdk-8-jdk"
+OCAML="ocaml ocaml-doc ocaml-findlib opam ocaml-native-compilers libpcre-ocaml-dev"
+RUBY="jekyll ruby1.9.1-dev"
+TEX="texworks texlive"
+
+EDITORS="eclipse emacs"
+SECURE="libssl-dev m4 zlib1g-dev"
+SHELLS="csh fish ksh mksh rc tcsh sash"
+FILES="unace unrar zip unzip p7zip-full p7zip-rar \
+         sharutils rar uudeview mpack arj cabextract file-roller"
+PRETTY="variety"
+MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4 \
+         totem-mozilla icedax tagtool easytag id3tool lame \
+         nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
+CHROME="google-chrome-stable"
+
+sudo apt-get install -y $GCC $PYTHON $HASKELL $JAVA $OCAML $RUBY $TEX \
+                        $MEDIA $EDITORS $SECURE $SHELLS $FILES $PRETTY \
+                        $CHROME
 
 cabal install primes
-
-sudo apt-get install -y eclipse emacs
-
-#Pretty backgrounds
-sudo apt-get install -y variety
-
-#Alternate shells
-sudo apt-get install -y csh fish ksh mksh rc tcsh sash
-
-#Chrome
-sudo apt-get install -y google-chrome-stable
-
-#Media
-sudo apt-get install -y vlc
-sudo apt-get install -y gstreamer0.10-plugins-ugly gxine libdvdread4 \
-                        totem-mozilla icedax tagtool easytag id3tool \
-                        lame nautilus-script-audio-convert libmad0 \
-                        mpg321 gstreamer1.0-libav
-
-#Compressed files
-sudo apt-get install -y unace unrar zip unzip p7zip-full \
-                        p7zip-rar sharutils rar uudeview mpack arj \
-                        cabextract file-roller
+# opam install batteries core
 
 #Finalize
 sudo apt-get update
