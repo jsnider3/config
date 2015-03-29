@@ -10,6 +10,7 @@ sudo apt-get install -y ghc haskell-platform yesod
 sudo apt-get install -y openjdk-7-jdk openjdk-8-jdk
 sudo apt-get install -y ocaml opam
 sudo apt-get install -y jekyll ruby1.9.1-dev
+sudo apt-get install -y texworks texlive
 
 cabal install primes
 
@@ -19,7 +20,7 @@ sudo apt-get install -y eclipse emacs
 sudo apt-get install -y variety
 
 #Alternate shells
-sudo apt-get install -y fish ksh
+sudo apt-get install -y csh fish ksh mksh rc tcsh sash
 
 #Chrome
 sudo apt-get install -y google-chrome-stable
