@@ -11,7 +11,7 @@ set nowrap
 
 autocmd FileType make setlocal noexpandtab shiftwidth=8
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set ignorecase
 set smartcase
