@@ -2,6 +2,12 @@
 # A script to install all the packages I want
 #   on my machines.
 
+# Add ppa for variety.
+# Then uupdate the preinstalled packages.
+sudo add-apt-repository ppa:peterlevi/ppa
+sudo apt-get update
+sudo apt-get upgrade
+
 BASICS="autoconf automake git libtool make pkg-config"
 DOTNET="monodevelop mono-complete fsharp"
 GCC="build-essential curl gcc g++ gfortran"
@@ -14,7 +20,7 @@ PROLOG="swi-prolog"
 RUBY="jekyll ruby1.9.1-dev"
 TEX="texworks texlive"
 
-EDITORS="eclipse emacs"
+EDITORS="eclipse emacs vim-gnome"
 SECURE="libssl-dev m4 zlib1g-dev"
 SHELLS="csh fish ksh mksh rc tcsh sash"
 FILES="unace unrar zip unzip p7zip-full p7zip-rar \
@@ -23,7 +29,10 @@ PRETTY="variety"
 MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4 \
        totem-mozilla icedax tagtool easytag id3tool lame \
        nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
-CHROME="google-chrome-stable"
+
+#Get pre-installed packages up to date.
+sudo apt-get update
+sudo apt-get upgrade
 
 sudo apt-get install -y $GCC $PYTHON $HASKELL $JAVA $OCAML $PROLOG $RUBY \
                         $TEX $MEDIA $EDITORS $SECURE $SHELLS $FILES \
@@ -32,7 +41,18 @@ sudo apt-get install -y $GCC $PYTHON $HASKELL $JAVA $OCAML $PROLOG $RUBY \
 cabal install primes
 # opam install batteries core
 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+
 #Finalize
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get autoremove
+
+mkdir ~/Documents/Git
+cd ~/Documents/Git
+git clone https://github.com/jsnider3/config.git 
+cd config
+ln -snf .bashrc ~/.bashrc
+ln -snf .vimrc ~/.vimrc
