@@ -54,5 +54,5 @@ mkdir ~/Documents/Git
 cd ~/Documents/Git
 git clone https://github.com/jsnider3/config.git 
 cd config
-ln -snf .bashrc ~/.bashrc
-ln -snf .vimrc ~/.vimrc
+ln -snf `pwd`/.bashrc ~/.bashrc
+ln -snf `pwd`/.vimrc ~/.vimrc
