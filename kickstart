@@ -51,6 +51,11 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get autoremove
 
+#Setup variety
+sudo ln -snf /opt/extras.ubuntu.com/variety/bin/variety /usr/bin/variety
+variety
+
+#Clone my rc files.
 mkdir ~/Documents/Git
 cd ~/Documents/Git
 git clone https://github.com/jsnider3/config.git 
