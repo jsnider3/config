@@ -18,7 +18,8 @@ PERL="perl perl-tk"
 PYTHON="python3 pylint pypy python-dev python-numpy python-scipy cython"
 PROLOG="swi-prolog"
 RUBY="jekyll ruby1.9.1-dev"
-TEX="texworks texlive"
+R="r-base r-base-dev"
+TEX="texworks texlive texlive-fonts-extra texinfo"
 
 EDITORS="eclipse emacs vim-gnome"
 SECURE="libssl-dev m4 zlib1g-dev"
@@ -36,7 +37,7 @@ sudo apt-get upgrade
 
 sudo apt-get install -y $GCC $PYTHON $HASKELL $JAVA $OCAML $PROLOG $RUBY \
                         $TEX $MEDIA $EDITORS $SECURE $SHELLS $FILES \
-                        $PRETTY $CHROME $CSHARP $BASICS $PERL
+                        $PRETTY $CHROME $CSHARP $BASICS $PERL $R
 
 cabal install primes
 # opam install batteries core
