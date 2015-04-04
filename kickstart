@@ -17,7 +17,7 @@ OCAML="ocaml ocaml-doc ocaml-findlib opam ocaml-native-compilers libpcre-ocaml-d
 PERL="perl perl-tk"
 PYTHON="python3 pylint pypy python-dev python-numpy python-scipy cython"
 PROLOG="swi-prolog"
-RUBY="jekyll ruby1.9.1-dev"
+RUBY="jekyll ruby-dev"
 R="r-base r-base-dev"
 TEX="texworks texlive texlive-fonts-extra texinfo"
 
