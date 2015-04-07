@@ -8,7 +8,7 @@ sudo add-apt-repository ppa:peterlevi/ppa
 sudo apt-get update
 sudo apt-get upgrade
 
-BASICS="autoconf automake git libtool make pkg-config"
+BASICS="autoconf automake git libtool make pkg-config openssh-server"
 DOTNET="monodevelop mono-complete fsharp"
 GCC="build-essential curl gcc g++ gfortran"
 HASKELL="ghc haskell-platform yesod"
@@ -55,6 +55,11 @@ sudo apt-get autoremove
 #Setup variety
 sudo ln -snf /opt/extras.ubuntu.com/variety/bin/variety /usr/bin/variety
 variety
+
+#Setup git
+git config --global user.email "jsnider3@masonlive.gmu.edu"
+git config --global user.name "Joshua Snider"
+git config --global push.default simple
 
 #Clone my rc files.
 mkdir ~/Documents/Git
