@@ -68,3 +68,4 @@ git clone https://github.com/jsnider3/config.git
 cd config
 ln -snf `pwd`/.bashrc ~/.bashrc
 ln -snf `pwd`/.vimrc ~/.vimrc
+sudo cp umain_bash /usr/bin/umain
