@@ -71,6 +71,8 @@ fi
 #Setup git
 git config --global user.email "jsnider3@masonlive.gmu.edu"
 git config --global user.name "Joshua Snider"
+git config --global url."https://jsnider3@github.com".insteadOf "https://github.com"
+git config --global credential.helper 'cache --timeout=28800'
 git config --global push.default simple
 
 #Clone my rc files.
