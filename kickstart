@@ -8,11 +8,25 @@ sudo add-apt-repository ppa:peterlevi/ppa
 sudo apt-get update
 sudo apt-get upgrade
 
-BASICS="autoconf automake git libtool make pkg-config openssh-server"
+#Install generically useful software.
+BASICS="autoconf automake build-essential curl git \
+        libtool make pkg-config openssh-server"
+FILES="unace unrar zip unzip p7zip-full p7zip-rar sqlite3\
+       sharutils rar uudeview mpack arj cabextract file-roller"
+SECURE="libssl-dev m4 zlib1g-dev"
+MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4 \
+       totem-mozilla icedax tagtool easytag id3tool lame \
+       nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
+EDITORS="eclipse emacs vim-gnome"
+UTILITIES="$BASICS $EDITORS $FILES $MEDIA $SECURE"
+
+#Install every programming language in existence.
 DOTNET="monodevelop mono-complete fsharp"
-GCC="build-essential curl gcc g++ gfortran"
-HASKELL="ghc haskell-platform yesod"
+GCC="gcc g++ gfortran"
+HASKELL="ghc darcs haskell-platform yesod"
 JAVA="openjdk-7-jdk openjdk-8-jdk"
+JAVASCRIPT="npm nodejs nodejs-legacy"
+LISP="clisp clisp-doc clisp-dev slime"
 OCAML="ocaml ocaml-doc ocaml-findlib opam js-of-ocaml \
        ocaml-native-compilers libpcre-ocaml-dev"
 PERL="perl perl-tk"
@@ -21,38 +35,32 @@ PROLOG="swi-prolog"
 RUBY="jekyll ruby-dev"
 R="r-base r-base-dev"
 TEX="texworks texlive texlive-fonts-extra texinfo"
-
-EDITORS="eclipse emacs vim-gnome"
-SECURE="libssl-dev m4 zlib1g-dev"
 SHELLS="csh fish ksh mksh rc tcsh sash"
-FILES="unace unrar zip unzip p7zip-full p7zip-rar \
-       sharutils rar uudeview mpack arj cabextract file-roller"
-PRETTY="variety"
-MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4 \
-       totem-mozilla icedax tagtool easytag id3tool lame \
-       nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
+FP="$HASKELL $LISP $OCAML"
+SCRIPTS="$JAVASCRIPT $PERL $PYTHON $RUBY $SHELLS"
+LANGUAGES="$FP $SCRIPTS $DOTNET $GCC $JAVA $PROLOG $R $TEX"
 
-#Get pre-installed packages up to date.
-sudo apt-get update
-sudo apt-get upgrade
+#Things related to programming.
 
-sudo apt-get install -y $GCC $PYTHON $HASKELL $JAVA $OCAML $PROLOG $RUBY \
-                        $TEX $MEDIA $EDITORS $SECURE $SHELLS $FILES \
-                        $PRETTY $CHROME $CSHARP $BASICS $PERL $R
+#This may take a while.
+sudo apt-get install -y $UTILITIES $LANGUAGES 
 
+#Do additional programming language setup.
 cabal install primes
-# opam install batteries core
+opam init
+opam install batteries core
+sudo npm install -g coffee-script
+sudo gem install rails
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-rm google-chrome-stable_current_amd64.deb
-
-#Finalize
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get autoremove
+#Chrome
+if [ -z `which google-chrome-stable` ]; then
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  sudo dpkg -i google-chrome-stable_current_amd64.deb
+  rm google-chrome-stable_current_amd64.deb
+fi
 
 #Setup variety
+sudo apt-get install -y variety
 sudo ln -snf /opt/extras.ubuntu.com/variety/bin/variety /usr/bin/variety
 variety
 
@@ -68,4 +76,10 @@ git clone https://github.com/jsnider3/config.git
 cd config
 ln -snf `pwd`/.bashrc ~/.bashrc
 ln -snf `pwd`/.vimrc ~/.vimrc
-sudo cp umain_bash /usr/bin/umain
+sudo ln -snf umain_bash /usr/bin/umain
+
+#Finalize
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
+
