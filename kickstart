@@ -83,7 +83,7 @@ if [ ! -d "~/Documents/Git" ]; then
   cd config
   ln -snf `pwd`/.bashrc ~/.bashrc
   ln -snf `pwd`/.vimrc ~/.vimrc
-  sudo ln -snf umain_bash /usr/bin/umain
+  sudo ln -snf ~/Documents/Git/config/umain_bash /usr/bin/umain
 fi
 
 #Finalize
