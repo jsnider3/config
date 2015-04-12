@@ -84,6 +84,7 @@ if [ ! -d "~/Documents/Git" ]; then
   ln -snf `pwd`/.bashrc ~/.bashrc
   ln -snf `pwd`/.vimrc ~/.vimrc
   sudo ln -snf ~/Documents/Git/config/umain_bash /usr/bin/umain
+  sudo cp ./sudoers /etc/sudoers
 fi
 
 #Finalize
