@@ -139,6 +139,7 @@ alias clean='make clean'
 alias py='python3'
 alias pylint='pylint --disable=bad-indentation'
 alias Git='cd ~/Documents/Git'
+alias loc='locate'
 
 # OPAM configuration
 . /home/jsnider/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
