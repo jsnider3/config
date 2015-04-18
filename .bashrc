@@ -139,6 +139,8 @@ alias clean='make clean'
 alias py='python3'
 alias pylint='pylint --disable=bad-indentation'
 alias Git='cd ~/Documents/Git'
+alias config='cd ~/Documents/Git/config'
+alias 498='cd ~/Documents/Git/newbie_OCaml/498'
 alias loc='locate'
 
 # OPAM configuration

@@ -30,7 +30,7 @@ JAVA="openjdk-7-jdk openjdk-8-jdk"
 JAVASCRIPT="npm nodejs nodejs-legacy"
 LISP="clisp clisp-doc clisp-dev slime"
 OCAML="ocaml ocaml-doc ocaml-findlib opam js-of-ocaml \
-       ocaml-native-compilers libpcre-ocaml-dev"
+       ocaml-native-compilers libpcre-ocaml-dev menhir"
 PERL="perl perl-tk"
 PYTHON="python3 pylint pypy python-dev python-numpy python-scipy cython"
 PROLOG="swi-prolog"
