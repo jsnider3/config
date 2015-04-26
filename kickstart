@@ -11,7 +11,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 #Install generically useful software.
-BASICS="autoconf automake build-essential curl git \
+BASICS="autoconf automake build-essential curl git hibernate\
         libtool make pkg-config openssh-server virtualbox-qt"
 FILES="unace unrar zip unzip p7zip-full p7zip-rar sqlite3\
        sharutils rar uudeview mpack arj cabextract file-roller"
@@ -42,14 +42,13 @@ FP="$HASKELL $LISP $OCAML"
 SCRIPTS="$JAVASCRIPT $PERL $PYTHON $RUBY $SHELLS"
 LANGUAGES="$FP $SCRIPTS $DOTNET $GCC $JAVA $PROLOG $R $TEX"
 
-#Things related to programming.
-
 #This may take a while.
 sudo apt-get install -y $UTILITIES $LANGUAGES 
 
 #Do additional programming language setup.
 cabal install primes
 opam init
+eval `opam config env`
 opam install batteries core
 sudo npm install -g coffee-script
 sudo gem install rails

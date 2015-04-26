@@ -145,4 +145,4 @@ alias loc='locate'
 
 # OPAM configuration
 . /home/jsnider/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-source /home/jsnider/ocamlbrew/ocaml-4.01.0/etc/ocamlbrew.bashrc
+eval `opam config env`
