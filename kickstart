@@ -7,8 +7,8 @@
 if [ -z `which variety` ]; then
   sudo add-apt-repository ppa:peterlevi/ppa
 fi
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update -y
+sudo apt-get upgrade -y
 
 #Install generically useful software.
 BASICS="autoconf automake build-essential curl git hibernate\
@@ -88,7 +88,7 @@ if [ ! -d "~/Documents/Git" ]; then
 fi
 
 #Finalize
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update -y
+sudo apt-get upgrade -y
 sudo apt-get autoremove
 
