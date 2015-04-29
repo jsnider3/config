@@ -30,7 +30,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 #Install generically useful software.
-BASICS="autoconf automake build-essential curl hibernate\
+BASICS="autoconf automake build-essential cloc curl hibernate\
         libtool make pkg-config openssh-server virtualbox-qt"
 FILES="unace unrar zip unzip p7zip-full p7zip-rar sqlite3\
        sharutils rar uudeview mpack arj cabextract file-roller"
