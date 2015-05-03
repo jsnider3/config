@@ -43,7 +43,7 @@ set switchbuf=useopen
 nmap W w!
 
 highlight Overflow guibg=red guifg=white
-autocmd FileType c,cc,cpp,h,hh,hpp,ipp,python match Overflow /\%82v.*/
+autocmd FileType tex,c,cc,cpp,h,hh,hpp,ipp,python match Overflow /\%82v.*/
 
 highlight Normal guibg=black
 highlight Normal ctermbg=black
