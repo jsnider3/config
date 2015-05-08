@@ -30,8 +30,8 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 #Install generically useful software.
-BASICS="autoconf automake build-essential cloc curl hibernate\
-        libtool make pkg-config openssh-server virtualbox-qt"
+BASICS="autoconf automake build-essential cloc curl gimp hibernate\
+        libtool make pinta pkg-config openssh-server virtualbox-qt"
 FILES="unace unrar zip unzip p7zip-full p7zip-rar sqlite3\
        sharutils rar uudeview mpack arj cabextract file-roller"
 SECURE="libssl-dev m4 zlib1g-dev"
