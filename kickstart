@@ -45,6 +45,7 @@ UTILITIES="$BASICS $EDITORS $FILES $MEDIA $SECURE $NETWORK"
 #Install every programming language in existence.
 DOTNET="monodevelop mono-complete fsharp"
 GCC="gcc g++ gfortran"
+GO="gccgo-go"
 HASKELL="ghc darcs haskell-platform yesod"
 JAVA="openjdk-7-jdk openjdk-8-jdk"
 JAVASCRIPT="npm nodejs nodejs-legacy"
@@ -60,7 +61,7 @@ TEX="texworks texlive texlive-full texlive-fonts-extra texinfo"
 SHELLS="csh fish ksh mksh rc tcsh sash"
 FP="$HASKELL $LISP $OCAML"
 SCRIPTS="$JAVASCRIPT $PERL $PYTHON $RUBY $SHELLS"
-LANGUAGES="$FP $SCRIPTS $DOTNET $GCC $JAVA $PROLOG $R $TEX"
+LANGUAGES="$FP $SCRIPTS $DOTNET $GCC $GO $JAVA $PROLOG $R $TEX"
 
 #This may take a while.
 sudo apt-get install -y $UTILITIES $LANGUAGES 
