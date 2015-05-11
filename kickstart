@@ -53,7 +53,8 @@ LISP="clisp clisp-doc clisp-dev slime"
 OCAML="ocaml ocaml-doc ocaml-findlib opam js-of-ocaml \
        ocaml-native-compilers libpcre-ocaml-dev menhir"
 PERL="perl perl-tk"
-PYTHON="python3 pylint pypy python-dev python-numpy python-scipy cython"
+PYTHON="python3 pylint pypy python-dev python-numpy python-pip \
+        python-scipy cython"
 PROLOG="swi-prolog"
 RUBY="jekyll ruby-dev rake"
 R="r-base r-base-dev"
