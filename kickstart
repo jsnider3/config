@@ -68,7 +68,7 @@ LANGUAGES="$FP $SCRIPTS $DOTNET $GCC $GO $JAVA $PROLOG $R $TEX"
 sudo apt-get install -y $UTILITIES $LANGUAGES 
 
 #Do additional programming language setup.
-sudo pip install scipy numpy pandas
+sudo pip install numexpr numpy pandas scipy
 cabal update
 cabal install primes
 opam init -n
