@@ -31,7 +31,8 @@ sudo apt-get upgrade -y
 
 #Install generically useful software.
 BASICS="autoconf automake build-essential cloc curl gimp hibernate\
-        libtool make pinta pkg-config openssh-server virtualbox-qt"
+        libtool make pinta pkg-config openssh-server virtualbox-qt \
+        libfreetype6-dev"
 FILES="unace unrar zip unzip p7zip-full p7zip-rar sqlite3\
        sharutils rar uudeview mpack arj cabextract file-roller"
 SECURE="libssl-dev m4 zlib1g-dev"
@@ -68,7 +69,7 @@ LANGUAGES="$FP $SCRIPTS $DOTNET $GCC $GO $JAVA $PROLOG $R $TEX"
 sudo apt-get install -y $UTILITIES $LANGUAGES 
 
 #Do additional programming language setup.
-sudo pip install numexpr numpy pandas scipy
+sudo pip install matplotlib numexpr numpy pandas scipy
 cabal update
 cabal install primes
 opam init -n
