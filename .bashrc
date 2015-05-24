@@ -114,7 +114,8 @@ if ! shopt -oq posix; then
 fi
 
 ### MY ADDITIONS
-export PATH=$HOME/sys161/bin:$HOME/sys161/tools/bin:$PATH:.
+export GOPATH="$HOME/gocode"
+export PATH=$GOPATH/bin:$HOME/sys161/bin:$HOME/sys161/tools/bin:$PATH:.
 export OS=$HOME/os161
 export EDITOR=vim
 export zeus="jsnider3@zeus.vse.gmu.edu"
