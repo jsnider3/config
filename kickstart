@@ -60,7 +60,7 @@ PYTHON="ipython python3 pylint pypy python-dev \
         python-pip cython virtualenv"
 PROLOG="swi-prolog"
 RUBY="jekyll ruby-dev rake"
-R="r-base r-base-dev"
+R="littler r-base r-base-dev"
 TEX="texworks texlive texlive-full texlive-fonts-extra texinfo"
 SHELLS="csh fish ksh mksh rc tcsh sash"
 FP="$HASKELL $LISP $OCAML"
