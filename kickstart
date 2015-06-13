@@ -26,6 +26,7 @@ fi
 if [ -z `which variety` ]; then
   sudo add-apt-repository ppa:peterlevi/ppa
 fi
+# Add ppa for cassandra.
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
@@ -45,6 +46,7 @@ EDITORS="eclipse emacs vim-gnome"
 UTILITIES="$BASICS $EDITORS $FILES $IA32 $MEDIA $SECURE $NETWORK"
 
 #Install every programming language in existence.
+CASSANDRA="dsc21"
 COBOL="open-cobol"
 DOTNET="monodevelop mono-complete fsharp"
 GCC="gcc g++ gfortran"
@@ -61,11 +63,12 @@ PYTHON="ipython python3 pylint pypy python-dev \
 PROLOG="swi-prolog"
 RUBY="jekyll ruby-dev rake"
 R="littler r-base r-base-dev"
-TEX="texworks texlive texlive-full texlive-fonts-extra texinfo"
+TEX="texworks texlive texlive-full texlive-fonts-extra texinfo xzdec"
 SHELLS="csh fish ksh mksh rc tcsh sash"
 FP="$HASKELL $LISP $OCAML"
 SCRIPTS="$JAVASCRIPT $PERL $PYTHON $RUBY $SHELLS"
-LANGUAGES="$COBOL $FP $SCRIPTS $DOTNET $GCC $GO $JAVA $PROLOG $R $TEX"
+LANGUAGES="$CASSANDRA $COBOL $FP $SCRIPTS $DOTNET $GCC $GO $JAVA \
+           $PROLOG $R $TEX"
 
 #This may take a while.
 sudo apt-get install -y $UTILITIES $LANGUAGES 
