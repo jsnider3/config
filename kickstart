@@ -40,7 +40,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 #Install generically useful software.
-BASICS="autoconf automake build-essential cloc curl gimp hibernate \
+BASICS="autoconf automake build-essential cloc curl dos2unix gimp hibernate \
         lamp-server^ libtool make markdown pinta pkg-config openssh-server \
         openvpn spark virtualbox-qt libfreetype6-dev ttf-ancient-fonts"
 IA32="lib32z1 lib32ncurses5 lib32bz2-1.0"
