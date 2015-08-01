@@ -36,14 +36,19 @@ if [ -z `which sbt` ]; then
   echo "deb http://dl.bintray.com/sbt/debian /" | \
     sudo tee -a /etc/apt/sources.list.d/sbt.list
 fi
+# Add ppa for sbt.
+if [ -z `which android-studio` ]; then
+  sudo apt-add-repository -y ppa:paolorotolo/android-studio
+fi
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
 #Install generically useful software.
-BASICS="autoconf automake build-essential cloc curl dos2unix gimp hibernate \
-        lamp-server^ libtool make markdown pinta pkg-config openssh-server \
-        openvpn spark virtualbox-qt libfreetype6-dev ttf-ancient-fonts"
-IA32="lib32z1 lib32ncurses5 lib32bz2-1.0"
+BASICS="autoconf automake bridge-utils build-essential cloc cpu-checker curl \
+        dos2unix gimp hibernate lamp-server^ libtool libvirt-bin make \
+        markdown pinta pkg-config openssh-server openvpn qemu-kvm spark \
+        ubuntu-vm-builder virtualbox-qt libfreetype6-dev ttf-ancient-fonts"
+IA32="lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6"
 FILES="unace unrar zip unzip p7zip-full p7zip-rar sqlite3\
        sharutils rar uudeview mpack arj cabextract file-roller"
 SECURE="libssl-dev m4 zlib1g-dev"
@@ -63,7 +68,7 @@ DOTNET="monodevelop mono-complete fsharp"
 GCC="gcc g++ gfortran"
 GO="gccgo-go golang-go golang-go.tools"
 HASKELL="ghc darcs haskell-platform yesod"
-JAVA="openjdk-7-jdk openjdk-8-jdk jflex"
+JAVA="android-studio jflex openjdk-7-jdk openjdk-8-jdk"
 JAVASCRIPT="npm nodejs nodejs-legacy"
 LISP="clisp clisp-doc clisp-dev slime"
 OCAML="ocaml ocaml-doc ocaml-findlib opam js-of-ocaml \

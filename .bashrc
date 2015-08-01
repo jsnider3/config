@@ -144,6 +144,7 @@ alias Workspace='Git; cd Workspace'
 alias config='cd ~/Documents/Git/config'
 alias 498='cd ~/Documents/Git/newbie_OCaml/498'
 alias loc='locate'
+alias android='/opt/android-studio/bin/studio.sh'
 
 # OPAM configuration
 . /home/jsnider/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
