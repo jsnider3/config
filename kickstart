@@ -126,3 +126,5 @@ sudo apt-get upgrade -y
 sudo apt-get autoremove
 
 
+#Tell user if we need to edit bios for Android emulation.
+kvm-ok
