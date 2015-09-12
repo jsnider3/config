@@ -77,7 +77,8 @@ OCAML="ocaml ocaml-doc ocaml-findlib opam js-of-ocaml \
        ocaml-native-compilers libpcre-ocaml-dev menhir"
 PERL="perl perl-tk"
 PYTHON="ipython python3 pylint pypy python-dev \
-        python-pip python3-pip python3-bs4 cython virtualenv"
+        python-pip python3-pip python3-bs4 python3-coverage \
+        cython virtualenv"
 PROLOG="swi-prolog"
 RUBY="jekyll ruby-dev rake"
 R="littler r-base r-base-dev"
@@ -93,7 +94,7 @@ LANGUAGES="$CASSANDRA $COBOL $DB $FP $SCRIPTS $DOTNET $GCC $GO $JAVA \
 sudo apt-get install -y $UTILITIES $LANGUAGES 
 
 #Do additional programming language setup.
-sudo pip install matplotlib numexpr numpy pandas scipy
+sudo pip install coverage matplotlib numexpr numpy pandas scipy
 cabal update
 cabal install primes
 opam init -n
