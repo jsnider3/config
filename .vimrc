@@ -47,6 +47,7 @@ autocmd FileType tex,c,cc,cpp,h,hh,hpp,ipp,python match Overflow /\%82v.*/
 
 highlight ExtraWhitespace guibg=red guifg=white
 autocmd FileType tex,c,cc,cpp,h,hh,hpp,ipp,python match ExtraWhitespace /\s\+$/
+autocmd BufRead,BufNewFile *.go set noexpandtab
 
 highlight Normal guibg=black
 highlight Normal ctermbg=black
