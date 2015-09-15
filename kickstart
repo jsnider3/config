@@ -9,6 +9,9 @@ git config --global user.name "Joshua Snider"
 git config --global url."https://jsnider3@github.com".insteadOf "https://github.com"
 git config --global credential.helper 'cache --timeout=28800'
 git config --global push.default simple
+git config --global core.autocrlf false
+git config --global core.filemode false
+git config --global color.ui true
 
 #Clone my rc files.
 if [ ! -d "~/Documents/Git" ]; then
@@ -45,17 +48,20 @@ sudo apt-get upgrade -y
 
 #Install generically useful software.
 BASICS="autoconf automake bridge-utils build-essential cloc cpu-checker curl \
-        dos2unix gimp hibernate lamp-server^ libtool libvirt-bin make \
-        markdown pinta pkg-config openssh-server openvpn qemu-kvm spark \
-        ubuntu-vm-builder virtualbox-qt libfreetype6-dev ttf-ancient-fonts"
-IA32="lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 libgtk2.0-0:i386 \
-      libnss3-1d:i386 libnspr4-0d:i386 lib32nss-mdns* libxml2:i386 \
+        dos2unix gimp hibernate lamp-server^ libcups2-dev libtool\
+        libvirt-bin make markdown pinta pkg-config openssh-server openvpn\
+        qemu-kvm spark ubuntu-vm-builder virtualbox-qt libfreetype6-dev\
+        ttf-ancient-fonts libegl1-Mesa-dev libgtk2.0-dev gconf-2.0\
+        libpulse-dev libxtst-dev libxss-dev libpci-dev libexif-dev\
+        libconf2-dev libgnome-keyring-dev libnss3-dev"
+IA32="lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 libgtk2.0-0:i386\
+      libnss3-1d:i386 libnspr4-0d:i386 lib32nss-mdns* libxml2:i386\
       libxslt1.1:i386 libstdc++6:i386"
 FILES="unace unrar zip unzip p7zip-full p7zip-rar sqlite3\
        sharutils rar uudeview mpack arj cabextract file-roller"
 SECURE="libssl-dev m4 zlib1g-dev"
-MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4 \
-       totem-mozilla icedax tagtool easytag id3tool lame \
+MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4\
+       totem-mozilla icedax tagtool easytag id3tool lame\
        nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
 NETWORK="apcupsd bootpc httpie tftp whois"
 EDITORS="eclipse emacs vim-gnome"
