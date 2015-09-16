@@ -4,7 +4,7 @@
 #   git must be preinstalled.
 
 #Setup git
-git config --global user.email "jsnider3@masonlive.gmu.edu"
+git config --global user.email "josh@joshuasnider.com"
 git config --global user.name "Joshua Snider"
 git config --global url."https://jsnider3@github.com".insteadOf "https://github.com"
 git config --global credential.helper 'cache --timeout=28800'
@@ -53,7 +53,9 @@ BASICS="autoconf automake bridge-utils build-essential cloc cpu-checker curl \
         qemu-kvm spark ubuntu-vm-builder virtualbox-qt libfreetype6-dev\
         ttf-ancient-fonts libegl1-Mesa-dev libgtk2.0-dev gconf-2.0\
         libpulse-dev libxtst-dev libxss-dev libpci-dev libexif-dev\
-        libconf2-dev libgnome-keyring-dev libnss3-dev"
+        libconf2-dev libgnome-keyring-dev libnss3-dev libc++6-dev \
+        libc++-dev libc++-helpers libc++-test libc++1 libc++abi-dev\
+        libc++abi-test libc++abi1 libstdc++-4.8-dev"
 IA32="lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 libgtk2.0-0:i386\
       libnss3-1d:i386 libnspr4-0d:i386 lib32nss-mdns* libxml2:i386\
       libxslt1.1:i386 libstdc++6:i386"
@@ -73,7 +75,7 @@ CASSANDRA="dsc21"
 COBOL="open-cobol"
 DB="mongodb mongodb-clients"
 DOTNET="monodevelop mono-complete fsharp"
-GCC="gcc g++ gfortran"
+GCC="gcc g++ gfortran clang"
 GO="gccgo-go golang-go golang-go.tools"
 HASKELL="ghc darcs haskell-platform yesod"
 JAVA="android-studio jflex junit openjdk-7-jdk openjdk-8-jdk"
