@@ -55,7 +55,8 @@ BASICS="autoconf automake bridge-utils build-essential cloc cpu-checker curl \
         libpulse-dev libxtst-dev libxss-dev libpci-dev libexif-dev\
         libconf2-dev libgnome-keyring-dev libnss3-dev libc++6-dev \
         libc++-dev libc++-helpers libc++-test libc++1 libc++abi-dev\
-        libc++abi-test libc++abi1 libstdc++-4.8-dev"
+        libc++abi-test libc++abi1 libstdc++-4.8-dev libstdc++6-4.7-dev\
+        libclang-dev ttf-indic-fonts ttf-punjabi-fonts gperf"
 IA32="lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 libgtk2.0-0:i386\
       libnss3-1d:i386 libnspr4-0d:i386 lib32nss-mdns* libxml2:i386\
       libxslt1.1:i386 libstdc++6:i386"
@@ -139,3 +140,11 @@ sudo apt-get autoremove
 
 #Tell user if we need to edit bios for Android emulation.
 kvm-ok
+
+#Setup chromium project.
+cd ~/Documents/Git
+if [ ! -d "~Documents/Git/chromium"]; then
+  cd ~/Documents/Git
+  cp "~/Documents/Git/config/make_chrome.sh" ./
+  sh make_chrome.sh
+fi

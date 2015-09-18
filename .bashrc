@@ -151,3 +151,5 @@ alias android='unset JAVA_TOOL_OPTIONS; /opt/android-studio/bin/studio.sh'
 # OPAM configuration
 . /home/jsnider/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 eval `opam config env`
+
+export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
