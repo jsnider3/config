@@ -56,7 +56,7 @@ BASICS="autoconf automake bridge-utils build-essential cloc cpu-checker curl \
         libconf2-dev libgnome-keyring-dev libnss3-dev libc++6-dev \
         libc++-dev libc++-helpers libc++-test libc++1 libc++abi-dev\
         libc++abi-test libc++abi1 libstdc++-4.8-dev libstdc++6-4.7-dev\
-        libclang-dev ttf-indic-fonts ttf-punjabi-fonts gperf"
+        libclang-dev ttf-indic-fonts ttf-punjabi-fonts gperf sshpass"
 IA32="lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 libgtk2.0-0:i386\
       libnss3-1d:i386 libnspr4-0d:i386 lib32nss-mdns* libxml2:i386\
       libxslt1.1:i386 libstdc++6:i386"
@@ -66,7 +66,7 @@ SECURE="libssl-dev m4 zlib1g-dev"
 MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4\
        totem-mozilla icedax tagtool easytag id3tool lame\
        nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
-NETWORK="apcupsd bootpc httpie tftp whois"
+NETWORK="apcupsd bootpc httpie network-manager-openvpn-gnome tftp whois"
 EDITORS="eclipse emacs vim-gnome"
 WEKA='weka'
 UTILITIES="$BASICS $EDITORS $FILES $IA32 $MEDIA $SECURE $NETWORK $WEKA"
@@ -79,7 +79,7 @@ DOTNET="monodevelop mono-complete fsharp"
 GCC="gcc g++ gfortran clang"
 GO="gccgo-go golang-go golang-go.tools"
 HASKELL="ghc darcs haskell-platform yesod"
-JAVA="android-studio jflex junit openjdk-7-jdk openjdk-8-jdk"
+JAVA="android-studio cobertura jflex junit openjdk-7-jdk openjdk-8-jdk"
 JAVASCRIPT="npm nodejs nodejs-legacy"
 LISP="clisp clisp-doc clisp-dev slime"
 OCAML="ocaml ocaml-doc ocaml-findlib opam js-of-ocaml \
