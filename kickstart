@@ -17,8 +17,10 @@ git config --global color.ui true
 if [ ! -d "~/Documents/Git" ]; then
   mkdir ~/Documents/Git
   cd ~/Documents/Git
-  git clone https://github.com/jsnider3/config.git 
-  cd config
+  git clone https://github.com/jsnider3/CloneGits.git
+  cd CloneGits
+  python2 clonegits.py --dest="$HOME/Documents/Git --user=jsnider3"
+  cd ~/Documents/Git/config
   ln -snf `pwd`/.bashrc ~/.bashrc
   ln -snf `pwd`/.vimrc ~/.vimrc
   sudo ln -snf ~/Documents/Git/config/umain_bash /usr/bin/umain
@@ -103,7 +105,7 @@ LANGUAGES="$CASSANDRA $COBOL $DB $FP $SCRIPTS $DOTNET $GCC $GO $JAVA \
 sudo apt-get install -y $UTILITIES $LANGUAGES 
 
 #Do additional programming language setup.
-sudo pip install coverage matplotlib numexpr numpy pandas scipy
+sudo pip install coverage matplotlib numexpr numpy pandas PyGithub scipy
 cabal update
 cabal install primes
 opam init -n
