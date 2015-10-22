@@ -112,7 +112,9 @@ opam init -n
 eval `opam config env`
 opam install batteries core -y
 sudo npm install -g coffee-script harp github
-sudo gem install mercenary rails
+sudo gem install mercenary rails travis
+curl https://install.meteor.com/ | sh
+#TODO travis needs to be setup manually.
 
 #Chrome
 if [ -z `which google-chrome-stable` ]; then

@@ -154,3 +154,6 @@ alias gmuvpn='sudo openvpn ~/Documents/vpn.vse.gmu.edu.ovpn'
 eval `opam config env`
 
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
+
+# added by travis gem
+[ -f /home/josh/.travis/travis.sh ] && source /home/josh/.travis/travis.sh
