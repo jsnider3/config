@@ -69,7 +69,7 @@ MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4\
        totem-mozilla icedax tagtool easytag id3tool lame\
        nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
 NETWORK="apcupsd bootpc httpie network-manager-openvpn-gnome tftp whois"
-EDITORS="eclipse emacs vim-gnome"
+EDITORS="eclipse eclipse-platform emacs vim-gnome"
 WEKA='weka'
 UTILITIES="$BASICS $EDITORS $FILES $IA32 $MEDIA $SECURE $NETWORK $WEKA"
 
