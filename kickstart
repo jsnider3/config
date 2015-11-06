@@ -145,6 +145,12 @@ sudo apt-get autoremove
 #Tell user if we need to edit bios for Android emulation.
 kvm-ok
 
+# Google App Engine for Java
+cd ~/Downloads
+wget https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.28.zip
+cd /usr/local/share
+sudo unzip ~/Downloads/appengine-java-sdk*
+
 #Setup chromium project.
 cd ~/Documents/Git
 if [ ! -d "~Documents/Git/chromium"]; then

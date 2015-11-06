@@ -121,6 +121,7 @@ export EDITOR=vim
 export zeus="jsnider3@zeus.vse.gmu.edu"
 export PATH=$HOME/site/bin:/usr/local/sys161:/usr/local/sys161/bin:$PATH
 export PATH=$PATH:$HOME/Documents/Git/depot_tools
+export PATH=$PATH:/usr/local/share/appengine-java-sdk-1.9.28/bin
 alias vim='gvim -p'
 alias docs="cd ~/Documents"
 alias dl="cd ~/Downloads"
