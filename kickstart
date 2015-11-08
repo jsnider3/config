@@ -141,7 +141,6 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get autoremove
 
-
 #Tell user if we need to edit bios for Android emulation.
 kvm-ok
 
@@ -150,6 +149,20 @@ cd ~/Downloads
 wget https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.28.zip
 cd /usr/local/share
 sudo unzip ~/Downloads/appengine-java-sdk*
+
+# Hadoop
+cd /usr/local/share
+sudo wget http://apache.claz.org/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz
+sudo tar xzf hadoop-2.7.1.tar.gz
+sudo ln -snf hadoop-2.7.1 hadoop
+sudo rm *.tar.gz
+sudo addgroup hadoop
+sudo useradd -G hadoop hduser
+sudo ln -snf `pwd`/hduser.bashrc ~hduser/.bashrc
+sudo su - hduser
+ssh-keygen -t rsa -P ""
+cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+# See http://www.tutorialspoint.com/hadoop/hadoop_enviornment_setup.htm
 
 #Setup chromium project.
 cd ~/Documents/Git
