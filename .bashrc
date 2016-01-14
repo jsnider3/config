@@ -121,7 +121,7 @@ export EDITOR=vim
 export zeus="jsnider3@zeus.vse.gmu.edu"
 export PATH=$HOME/site/bin:/usr/local/sys161:/usr/local/sys161/bin:$PATH
 export PATH=$PATH:$HOME/Documents/Git/depot_tools
-export PATH=$PATH:/usr/local/share/appengine-java-sdk-1.9.28/bin
+export PATH=$PATH:/usr/local/share/appengine-java-sdk/bin
 alias vim='gvim -p'
 alias docs="cd ~/Documents"
 alias dl="cd ~/Downloads"
@@ -135,7 +135,7 @@ alias u=". /usr/bin/umain"
 alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 alias nautilus="nautilus ."
-export CLASSPATH=".:/usr/share/java/junit.jar:/usr/local/lib/antlr-4.2-complete.jar:$CLASSPATH:$PATH"
+export CLASSPATH=".:/usr/share/java/sqlite-jdbc.jar:/usr/share/java/junit.jar:/usr/local/lib/antlr-4.2-complete.jar:$CLASSPATH:$PATH"
 export JUNIT="/usr/share/java/junit.jar"
 alias antlr4='java -jar /usr/local/lib/antlr-4.2-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
@@ -149,6 +149,9 @@ alias 498='cd ~/Documents/Git/newbie_OCaml/498'
 alias loc='locate'
 alias android='unset JAVA_TOOL_OPTIONS; /opt/android-studio/bin/studio.sh'
 alias gmuvpn='sudo openvpn ~/Documents/vpn.vse.gmu.edu.ovpn'
+
+# Fix broken key on laptop.
+xmodmap -e "keycode 90 = Down"
 
 # OPAM configuration
 . /home/jsnider/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
