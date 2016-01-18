@@ -50,7 +50,7 @@ sudo apt-get upgrade -y
 
 #Install generically useful software.
 BASICS="autoconf automake bridge-utils build-essential cloc cpu-checker curl \
-        dos2unix gimp hibernate lamp-server^ libcups2-dev libtool\
+        dos2unix gimp hibernate ispell lamp-server^ libcups2-dev libtool\
         libvirt-bin make markdown pinta pkg-config openssh-server openvpn\
         qemu-kvm spark ubuntu-vm-builder virtualbox-qt libfreetype6-dev\
         ttf-ancient-fonts libegl1-Mesa-dev libgtk2.0-dev gconf-2.0\
@@ -105,7 +105,7 @@ LANGUAGES="$CASSANDRA $COBOL $DB $FP $SCRIPTS $DOTNET $GCC $GO $JAVA \
 sudo apt-get install -y $UTILITIES $LANGUAGES 
 
 #Do additional programming language setup.
-sudo pip install coverage matplotlib numexpr numpy pandas PyGithub scipy
+sudo pip install coverage matplotlib numexpr numpy pandas PyGithub scipy skills
 cabal update
 cabal install primes
 opam init -n
