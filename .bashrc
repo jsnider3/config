@@ -161,3 +161,6 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 # added by travis gem
 [ -f /home/josh/.travis/travis.sh ] && source /home/josh/.travis/travis.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

@@ -109,6 +109,7 @@ LANGUAGES="$CASSANDRA $COBOL $DB $FP $SCRIPTS $DOTNET $GCC $GO $JAVA \
 #This may take a while.
 sudo apt-get install -y $UTILITIES $LANGUAGES 
 
+
 #Do additional programming language setup.
 sudo pip install coverage matplotlib numexpr numpy pandas PyGithub scipy skills
 cabal update
@@ -118,6 +119,7 @@ eval `opam config env`
 opam install batteries core -y
 sudo npm install -g coffee-script harp github
 sudo gem install mercenary rails travis
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 curl https://install.meteor.com/ | sh
 #TODO travis needs to be setup manually.
 
