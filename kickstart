@@ -26,6 +26,10 @@ if [ ! -d "~/Documents/Git" ]; then
   sudo ln -snf ~/Documents/Git/config/umain_bash /usr/bin/umain
   sudo cp ./sudoers /etc/sudoers
 fi
+
+# Add ppa for java8.
+sudo add-apt-repository ppa:webupd8team/java
+
 # Add ppa for variety.
 # Then update the preinstalled packages.
 if [ -z `which variety` ]; then
@@ -81,7 +85,8 @@ DOTNET="monodevelop mono-complete fsharp"
 GCC="gcc g++ gfortran clang"
 GO="gccgo-go golang-go golang-go.tools"
 HASKELL="ghc darcs haskell-platform yesod"
-JAVA="android-studio cobertura jflex junit maven openjdk-7-jdk openjdk-8-jdk"
+JAVA="android-studio cobertura jflex junit maven oracle-java8-installer \
+    openjdk-7-jdk openjdk-8-jdk"
 JAVASCRIPT="npm nodejs nodejs-legacy"
 LISP="clisp clisp-doc clisp-dev slime"
 OCAML="ocaml ocaml-doc ocaml-findlib opam js-of-ocaml \
