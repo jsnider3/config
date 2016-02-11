@@ -87,7 +87,7 @@ GO="gccgo-go golang-go golang-go.tools"
 HASKELL="ghc darcs haskell-platform yesod"
 JAVA="android-studio cobertura jflex junit maven oracle-java8-installer \
     openjdk-7-jdk openjdk-8-jdk"
-JAVASCRIPT="npm nodejs nodejs-legacy"
+JAVASCRIPT="npm nodejs nodejs-legacy phantomjs"
 LISP="clisp clisp-doc clisp-dev slime"
 OCAML="ocaml ocaml-doc ocaml-findlib opam js-of-ocaml \
        ocaml-native-compilers libpcre-ocaml-dev menhir"
@@ -156,6 +156,12 @@ cd ~/Downloads
 wget https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.28.zip
 cd /usr/local/share
 sudo unzip ~/Downloads/appengine-java-sdk*
+
+# Google App Engine for Python
+cd ~/Downloads
+wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.32.zip
+cd /usr/local/share
+sudo unzip ~/Downloads/google_appengine*
 
 # Hadoop
 cd /usr/local/share
