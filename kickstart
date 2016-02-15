@@ -62,7 +62,8 @@ BASICS="autoconf automake bridge-utils build-essential cloc cpu-checker curl \
         libconf2-dev libgnome-keyring-dev libnss3-dev libc++6-dev \
         libc++-dev libc++-helpers libc++-test libc++1 libc++abi-dev\
         libc++abi-test libc++abi1 libstdc++-4.8-dev libstdc++6-4.7-dev\
-        libclang-dev ttf-indic-fonts ttf-punjabi-fonts gperf sshpass"
+        libclang-dev ttf-indic-fonts ttf-punjabi-fonts gperf sshpass \
+        vagrant"
 IA32="lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 libgtk2.0-0:i386\
       libnss3-1d:i386 libnspr4-0d:i386 lib32nss-mdns* libxml2:i386\
       libxslt1.1:i386 libstdc++6:i386"
