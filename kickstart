@@ -53,7 +53,8 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 #Install generically useful software.
-BASICS="autoconf automake bridge-utils build-essential cloc cpu-checker curl \
+BASICS="apcalc autoconf automake bridge-utils build-essential cloc \
+        cpu-checker curl docker.io \
         dos2unix gimp hibernate ispell lamp-server^ libcups2-dev libtool\
         libvirt-bin make markdown pinta pkg-config openssh-server openvpn\
         qemu-kvm spark ubuntu-vm-builder virtualbox-qt libfreetype6-dev\
