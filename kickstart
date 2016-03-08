@@ -27,6 +27,15 @@ if [ ! -d "~/Documents/Git" ]; then
   sudo cp ./sudoers /etc/sudoers
 fi
 
+if [ ! -d "~/Documents/Hg" ]; then
+  mkdir ~/Documents/Hg
+  cd ~/Documents/Hg
+  hg clone https://hg.python.org/cpython
+  cd cpython
+  ./configure --with-pydebug && make -j2
+  ./python -m test -j3
+fi
+
 # Add ppa for java8.
 sudo add-apt-repository ppa:webupd8team/java
 
