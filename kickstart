@@ -23,6 +23,7 @@ if [ ! -d "~/Documents/Git" ]; then
   cd ~/Documents/Git/config
   ln -snf `pwd`/.bashrc ~/.bashrc
   ln -snf `pwd`/.vimrc ~/.vimrc
+  ln -snf `pwd`/.gdbinit ~/.gdbinit
   sudo ln -snf ~/Documents/Git/config/umain_bash /usr/bin/umain
   sudo cp ./sudoers /etc/sudoers
 fi
