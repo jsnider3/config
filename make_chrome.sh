@@ -8,6 +8,6 @@ gclient sync
 gclient runhooks
 cd src
 ./build/install-build-deps.sh
-# gn gen out/Default
-# ninja -C out/Default
+gn gen out/Default
+ninja -C out/Default
 
