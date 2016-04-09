@@ -196,3 +196,6 @@ if [ ! -d "~Documents/Git/chromium"]; then
   cp "~/Documents/Git/config/make_chrome.sh" ./
   sh make_chrome.sh
 fi
+
+#Git codereview
+go get -u golang.org/x/review/git-codereview
