@@ -19,6 +19,8 @@ if [ ! -d "~/Documents/Git" ]; then
   cd ~/Documents/Git
   git clone https://github.com/jsnider3/CloneGits.git
   cd CloneGits
+  sudo apt-get install -y python-pip
+  pip install PyGithub
   python2 clonegits.py --dest="$HOME/Documents/Git --user=jsnider3"
   cd ~/Documents/Git/config
   ln -snf `pwd`/.bashrc ~/.bashrc
@@ -28,22 +30,13 @@ if [ ! -d "~/Documents/Git" ]; then
   sudo cp ./sudoers /etc/sudoers
 fi
 
-if [ ! -d "~/Documents/Hg" ]; then
-  mkdir ~/Documents/Hg
-  cd ~/Documents/Hg
-  hg clone https://hg.python.org/cpython
-  cd cpython
-  ./configure --with-pydebug && make -j2
-  ./python -m test -j3
-fi
-
 # Add ppa for java8.
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository -y ppa:webupd8team/java
 
 # Add ppa for variety.
 # Then update the preinstalled packages.
 if [ -z `which variety` ]; then
-  sudo add-apt-repository ppa:peterlevi/ppa
+  sudo add-apt-repository -y ppa:peterlevi/ppa
 fi
 # Add ppa for cassandra.
 if [ -z `which cqlsh` ]; then
@@ -70,32 +63,34 @@ BASICS="apcalc autoconf automake bridge-utils build-essential cloc \
         qemu-kvm spark ubuntu-vm-builder virtualbox-qt libfreetype6-dev\
         ttf-ancient-fonts libegl1-Mesa-dev libgtk2.0-dev gconf-2.0\
         libpulse-dev libxtst-dev libxss-dev libpci-dev libexif-dev\
-        libconf2-dev libgnome-keyring-dev libnss3-dev libc++6-dev \
+        libgnome-keyring-dev libnss3-dev libc++6-dev \
         libc++-dev libc++-helpers libc++-test libc++1 libc++abi-dev\
         libc++abi-test libc++abi1 libstdc++-4.8-dev libstdc++6-4.7-dev\
-        libclang-dev ttf-indic-fonts ttf-punjabi-fonts gperf sshpass \
-        vagrant"
-IA32="lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 libgtk2.0-0:i386\
+        libclang-dev mercurial ttf-indic-fonts ttf-punjabi-fonts gperf \
+        sshpass vagrant"
+IA32="lib32z1 lib32ncurses5 lib32stdc++6 libgtk2.0-0:i386\
       libnss3-1d:i386 libnspr4-0d:i386 lib32nss-mdns* libxml2:i386\
       libxslt1.1:i386 libstdc++6:i386"
 FILES="gsutil unace unrar zip unzip p7zip-full p7zip-rar sqlite3\
        sharutils rar uudeview mpack arj cabextract file-roller"
 SECURE="libssl-dev m4 zlib1g-dev"
 MEDIA="vlc gstreamer0.10-plugins-ugly gxine libdvdread4\
-       totem-mozilla icedax tagtool easytag id3tool lame\
+       icedax tagtool easytag id3tool lame\
        nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav"
 NETWORK="apcupsd bootpc httpie network-manager-openvpn-gnome tftp whois"
 EDITORS="eclipse eclipse-platform emacs vim-gnome"
 WEKA='weka'
-UTILITIES="$BASICS $EDITORS $FILES $IA32 $MEDIA $SECURE $NETWORK $WEKA"
+DEPS='vim-gui-common vim-runtime libbonoboui2-0 libgnome2-0'
+
+UTILITIES="$BASICS $EDITORS $FILES $IA32 $MEDIA $SECURE $NETWORK \
+	   $WEKA $DEPS"
 
 #Install every programming language in existence.
-CASSANDRA="dsc21"
 COBOL="open-cobol"
 DB="mongodb mongodb-clients"
 DOTNET="monodevelop mono-complete fsharp"
 GCC="gcc g++ gfortran clang"
-GO="gccgo-go golang-go golang-go.tools"
+GO="golang-go golang-go.tools"
 HASKELL="ghc darcs haskell-platform yesod"
 JAVA="android-studio cobertura jflex junit maven oracle-java8-installer \
     openjdk-7-jdk openjdk-8-jdk"
@@ -115,12 +110,11 @@ TEX="texworks texlive texlive-full texlive-fonts-extra texinfo xzdec"
 SHELLS="csh fish ksh mksh rc tcsh sash"
 FP="$HASKELL $LISP $OCAML"
 SCRIPTS="$JAVASCRIPT $PERL $PYTHON $RUBY $SHELLS"
-LANGUAGES="$CASSANDRA $COBOL $DB $FP $SCRIPTS $DOTNET $GCC $GO $JAVA \
+LANGUAGES="$COBOL $DB $FP $SCRIPTS $DOTNET $GCC $GO $JAVA \
            $PROLOG $R $SCALA $TEX"
 
-#This may take a while.
-sudo apt-get install -y $UTILITIES $LANGUAGES 
-
+echo 'This may take a while.'
+sudo apt-get install -y --force-yes --install-suggests $UTILITIES $LANGUAGES
 
 #Do additional programming language setup.
 sudo pip install coverage matplotlib numexpr numpy pandas PyGithub scipy skills
@@ -137,6 +131,7 @@ curl https://install.meteor.com/ | sh
 
 #Chrome
 if [ -z `which google-chrome-stable` ]; then
+  sudo apt-get install -y libappindicator1 libindicator7
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   sudo dpkg -i google-chrome-stable_current_amd64.deb
   rm google-chrome-stable_current_amd64.deb
@@ -158,7 +153,7 @@ gsettings set \
 #Finalize
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get autoremove
+sudo apt-get autoremove -y
 
 #Tell user if we need to edit bios for Android emulation.
 kvm-ok
@@ -176,26 +171,46 @@ cd /usr/local/share
 sudo unzip ~/Downloads/google_appengine*
 
 # Hadoop
-cd /usr/local/share
-sudo wget http://apache.claz.org/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz
-sudo tar xzf hadoop-2.7.1.tar.gz
-sudo ln -snf hadoop-2.7.1 hadoop
-sudo rm *.tar.gz
-sudo addgroup hadoop
-sudo useradd -G hadoop hduser
-sudo ln -snf `pwd`/hduser.bashrc ~hduser/.bashrc
-sudo su - hduser
-ssh-keygen -t rsa -P ""
-cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
-# See http://www.tutorialspoint.com/hadoop/hadoop_enviornment_setup.htm
+gethadoop(){
+  cd /usr/local/share
+  sudo wget http://apache.claz.org/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz
+  sudo tar xzf hadoop-2.7.1.tar.gz
+  sudo ln -snf hadoop-2.7.1 hadoop
+  sudo rm *.tar.gz
+  sudo addgroup hadoop
+  sudo useradd -G hadoop hduser
+  sudo ln -snf `pwd`/hduser.bashrc ~hduser/.bashrc
+  ssh-keygen -t rsa -P ""
+  sudo cat ~hduser/.ssh/id_rsa.pub >> ~hduser/.ssh/authorized_keys
+  # See http://www.tutorialspoint.com/hadoop/hadoop_enviornment_setup.htm
+}
 
-#Setup chromium project.
-cd ~/Documents/Git
-if [ ! -d "~Documents/Git/chromium"]; then
+getcpython(){
+  if [ ! -d "~/Documents/Hg/cpython" ]; then
+    mkdir ~/Documents/Hg
+    cd ~/Documents/Hg
+    hg clone https://hg.python.org/cpython
+    cd cpython
+    ./configure --with-pydebug && make -j2
+    ./python -m test -j3
+  fi
+}
+
+getchromium(){
+  #Setup chromium project.
   cd ~/Documents/Git
-  cp "~/Documents/Git/config/make_chrome.sh" ./
-  sh make_chrome.sh
-fi
+  if [ ! -d "~Documents/Git/chromium"]; then
+    cd ~/Documents/Git
+    cp "~/Documents/Git/config/make_chrome.sh" ./
+    sh make_chrome.sh
+  fi
+}
+
+getchromium &
+getcpython &
+gethadoop &
+
+wait
 
 #Git codereview
 go get -u golang.org/x/review/git-codereview
